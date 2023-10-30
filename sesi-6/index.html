@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulasi DOM dengan Animasi Warna</title>
+    <style>
+        /* CSS untuk mengatur tampilan paragraf */
+        .paragraf {
+            width: 300px;
+            padding: 10px;
+            text-align: center;
+            font-size: 18px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <p class="paragraf">Fattah Nurizha Herlambang</p>
+
+    
+    <p class="paragraf">Hacktiv8</p>
+
+    
+    <p class="paragraf">Web Programming</p>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const paragraphs = document.querySelectorAll(".paragraf");
+            const colors = ["red", "green", "blue", "orange", "purple"];
+            let colorIndex = 0;
+
+            paragraphs.forEach(paragraph => {
+                paragraph.addEventListener("click", function () {
+                    if (colorIndex >= colors.length) {
+                        colorIndex = 0;
+                    }
+
+                    const color = colors[colorIndex];
+                    paragraph.style.backgroundColor = color;
+                    colorIndex++;
+
+                    // Menggunakan setTimeout untuk menghapus warna setelah beberapa detik
+                    setTimeout(() => {
+                        paragraph.style.backgroundColor = "";
+                    }, 3000); // Menghapus warna setelah 3 detik
+                });
+            });
+        });
+    </script>
+</body>
+</html>

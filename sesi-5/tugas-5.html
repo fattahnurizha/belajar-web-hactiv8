@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Pesanan</title>
+</head>
+<body>
+    <h1>Form Pesanan</h1>
+    <form action="#" method="post">
+        <label for="order">Order:</label>
+        <input type="text" id="order" name="order"><br><br>
+        
+        <label for="quantity">Kuantitas:</label>
+        <div>
+            <button type="button" id="decrease">-</button>
+            <input type="text" id="quantity" name="quantity" value="1">
+            <button type="button" id="increase">+</button>
+        </div><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Menampilkan hasil -->
+    <h2>Hasil:</h2>
+    <div id="output"></div>
+
+    <script>
+        // Mengambil elemen form dan elemen output
+        const form = document.querySelector('form');
+        const output = document.getElementById('output');
+        const quantityInput = document.getElementById('quantity');
+        const increaseButton = document.getElementById('increase');
+        const decreaseButton = document.getElementById('decrease');
+
+        // Tambahkan event listener untuk tombol "Tambah"
+        increaseButton.addEventListener('click', function() {
+            let currentQuantity = parseInt(quantityInput.value);
+            quantityInput.value = currentQuantity + 1;
+        });
+
+        // Tambahkan event listener untuk tombol "Kurang"
+        decreaseButton.addEventListener('click', function() {
+            let currentQuantity = parseInt(quantityInput.value);
+            if (currentQuantity > 1) {
+                quantityInput.value = currentQuantity - 1;
+            }
+        });
+
+        // Menangani submit form
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form mengirimkan permintaan ke server
+
+            // Mengambil nilai dari input order dan quantity
+            const orderValue = document.getElementById('order').value;
+            const quantityValue = parseInt(quantityInput.value);
+
+            // Menghapus hasil sebelumnya
+            output.innerHTML = '';
+
+            // Menampilkan hasil ke dalam elemen output sesuai dengan kuantitas
+            for (let i = 1; i <= quantityValue; i++) {
+                const orderItem = document.createElement('p');
+                orderItem.textContent = `Order ${i}: ${orderValue}`;
+                output.appendChild(orderItem);
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+/* CSS untuk tampilan umum */
+html {
+  background-color: aliceblue;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  background-color: white;
+}
+
+nav ul {
+  display: flex;
+  justify-content: flex-end;
+}
+
+nav ul li {
+  list-style: none;
+  margin: 20px 12px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #000000;
+  text-transform: uppercase;
+  padding: 6px;
+}
+
+nav ul li a:hover {
+  background-color: aliceblue;
+}
+
+section {
+  margin: 20px;
+}
+
+form {
+  background-color: white;
+  padding: 20px;
+}
+
+form input {
+  width: 100%;
+  margin-bottom: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form input[type="submit"] {
+  margin: 0;
+  background-color: #4CAF50;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+/* CSS untuk tampilan "section profile" */
+#profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.profile-photo img {
+  width: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-text {
+  margin-top: 10px;
+}
+
+.action button {
+  margin: 5px;
+}
+
+/* Menyesuaikan tampilan pada layar dengan lebar di bawah 768px */
+@media (max-width: 768px) {
+  #profile {
+    flex-direction: column;
+  }
+
+  .profile-text {
+    margin-top: 20px;
+  }
+
+  .action {
+    flex-direction: column;
+  }
+}

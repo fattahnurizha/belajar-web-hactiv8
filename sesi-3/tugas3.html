@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Fattah</title>
+    <link rel="stylesheet" href="tugas3.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">home</a></li>
+            <li><a href="#">product</a></li>
+            <li><a href="#">gallery</a></li>
+            <li><a href="#">blog</a></li>
+            <li><a href="#">my inventory</a></li>
+        </ul>
+    </nav>
+
+    <section>
+        <div id="profile">
+            <div class="profile-photo">
+                <img src="foto_fattah.jpg" alt="foto profil">
+            </div>
+            <div class="profile-text">
+                <h1>Fattah Nurizha Herlambang</h1>
+                <h2>Front End Designer</h2>
+                <div class="action">
+                    <button onclick="alert('Kontak button clicked')">Kontak</button>
+                    <button onclick="alert('Resume button clicked')">Resume</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="detail">
+            <table>
+                <tr>
+                    <td>Availability</td>
+                    <td>: Full Time</td>
+                </tr>
+                <tr>
+                    <td>Usia</td>
+                    <td>: 23</td>
+                </tr>
+                <tr>
+                    <td>Lokasi</td>
+                    <td>: Tangerang, Indonesia</td>
+                </tr>
+                <tr>
+                    <td>Pengalaman</td>
+                    <td>: 1 Tahun</td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td>: nurizhaherlambang@gmail.com</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <section>
+        <form action="#" onsubmit="return validateForm();">
+            <div>
+                <label for="nama">Nama</label>
+                <br>
+                <input type="text" name="nama" required>
+            </div>
+            <div>
+                <label for="role">Role</label>
+                <br>
+                <input type="text" name="role" required>
+            </div>
+            <div>
+                <label for="availability">Availability</label>
+                <br>
+                <input type="text" name="availability" required>
+            </div>
+            <div>
+                <label for="age">Age</label>
+                <br>
+                <input type="number" name="age" required>
+            </div>
+            <div>
+                <label for="lokasi">Lokasi</label>
+                <br>
+                <input type="text" name="lokasi" required>
+            </div>
+            <div>
+                <label for="experience">Year Experience</label>
+                <br>
+                <input type="number" name="experience" required>
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <br>
+                <input type="email" name="email" required>
+            </div>
+
+            <input type="submit" value="SUBMIT">
+        </form>
+    </section>
+
+    <script>
+        function validateForm() {
+            var nama = document.querySelector('input[name="nama"]').value;
+            var role = document.querySelector('input[name="role"]').value;
+            var email = document.querySelector('input[name="email"]').value;
+
+            if (nama === "" || role === "" || email === "" || !email.includes("@")) {
+                alert("Harap isi semua kolom dengan benar.");
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

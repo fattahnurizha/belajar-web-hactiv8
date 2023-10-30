@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Pesanan</title>
+</head>
+<body>
+    <h1>Form Pesanan</h1>
+    <form action="#" method="post">
+        <label for="order">Order:</label>
+        <input type="text" id="order" name="order"><br><br>
+        
+        <label for="quantity">Kuantitas:</label>
+        <input type="text" id="quantity" name="quantity"><br><br>
+        
+        <input type="submit" value="Submit">
+    </form>
+
+    <!-- Menampilkan hasil -->
+    <h2>Hasil:</h2>
+    <p>Order: <span id="output_order"></span></p>
+    <p>Kuantitas: <span id="output_quantity"></span></p>
+
+    <script>
+        // Mengambil elemen form dan elemen output
+        const form = document.querySelector('form');
+        const outputOrder = document.getElementById('output_order');
+        const outputQuantity = document.getElementById('output_quantity');
+
+        // Menangani submit form
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form mengirimkan permintaan ke server
+
+            // Mengambil nilai dari input order dan quantity
+            const orderValue = document.getElementById('order').value;
+            const quantityValue = document.getElementById('quantity').value;
+
+            // Menampilkan hasil ke dalam elemen output
+            outputOrder.textContent = orderValue;
+            outputQuantity.textContent = quantityValue;
+        });
+    </script>
+</body>
+</html>
